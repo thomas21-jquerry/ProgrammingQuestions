@@ -17,7 +17,7 @@
             }
             else{
                 isMultZeroExist = true;
-                break
+                break;
             }
             
         }
