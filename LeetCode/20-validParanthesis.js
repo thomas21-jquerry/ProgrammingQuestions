@@ -35,3 +35,28 @@
     }
     return !stack.length
 };
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+ var isValid = (s) => {
+    let stack = [];
+    let bracket = {
+        '(': ')',
+        '{': '}',
+        '[': ']',
+    }
+    for(let char of s){
+        if(bracket[char]){
+            stack.push(bracket[char])
+        }
+        else {
+            const character = stack.pop()
+            if(character != char){
+                return false
+            }
+        }
+    }
+    return stack.length==0
+};
